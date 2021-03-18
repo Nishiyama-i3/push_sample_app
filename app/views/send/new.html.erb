@@ -1,0 +1,16 @@
+<div>
+  <% if flash %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+  <%= form_with(url: send_index_path, method: :post) do |form| %>
+    <div>
+      <%= form.label :title, 'タイトル' %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.label :content, '内容' %>
+      <%= form.text_area :content %>
+    </div>
+    <%= form.submit '送信' %>
+  <% end %>
+</div>
